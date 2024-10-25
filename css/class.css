@@ -1,0 +1,19 @@
+.active {
+    background: #f2f0f8;
+}
+.word{
+    /*color: #6d61ea;*/
+    /*color: red;*/
+    font-weight: 700;
+}
+.transform{
+    transform: rotate(90deg);
+}
+.navigation_ul{
+    background: #6D61eA;
+    color: white;
+}
+.navigation_ul_none{
+    background: #EEE9E9;
+    color: #888888;
+}

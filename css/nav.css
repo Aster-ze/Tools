@@ -1,0 +1,74 @@
+*{
+    margin:0;
+    padding:0;
+}
+body ,html{
+    margin:0;
+    padding:0;
+    height: 100%;
+}
+#nav{
+    width: 240px;
+    height: 100%;
+    background: #fff;
+    /*background: #f9f9f9;*/
+    float: left;
+    position: fixed;
+    /*box-shadow: 10px 0 17px rgba(72,72,72,.1);*/
+
+    font-size: 14px;
+    color: #5a5454;
+}
+#nav a{
+    transition: all .8s;
+    padding:12px 70px 12px 25px;
+    text-decoration: none;
+    color: #5a5454;
+    line-height: 50px;
+    cursor: pointer;
+}
+#nav a div{
+    float: right;
+    padding: 0 20px;
+}
+#nav #logo{
+    height: 50px;
+    font-size: 30px;
+    /*color: #6D61eA;*/
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+/*#nav #logo img{*/
+/*    width: 230px;*/
+/*    height: 71px;*/
+/*}*/
+#nav ul img{
+    width: 18px;
+    height: 18px;
+    margin: 0 10px -2.5px 0;
+}
+#nav ul li ul li{
+    height: 40px;
+    padding-left: 60px;
+    line-height: 2.5;
+    transition: all .8s;
+    cursor: pointer;
+}
+#header{
+    width: 100%;
+    height: 50px;
+    float: left;
+    background: #fff;
+    box-shadow: 10px 0 17px rgba(72,72,72,.2);
+}
+
+ul li ul{
+    display: none;
+}
+#nav ul li :hover{
+    margin-left: 5px;
+}
+
+
