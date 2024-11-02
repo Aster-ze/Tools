@@ -12,10 +12,14 @@ $(function (){
                 //添加样式
                 $(this).next().css("display","inline");
                 $(this).find("div").addClass("transform");
-                if (i==0 || i==17){
-                    $(this).parent().css("height","210px");
-                }else {
+                if (i==0){
+                    $(this).parent().css("height","250px");   // 5个
+                } else if(i == 19) {
                     $(this).parent().css("height","130px");
+                } else if(i == 6 || i == 15) {
+                    $(this).parent().css("height","170px");   //  3个
+                } else {
+                    $(this).parent().css("height","210px");    // 4个
                 }
                 $(this).parent().addClass("active");
                 $(this).addClass("word");
@@ -38,13 +42,6 @@ $(function (){
             $.getJSON('../data/db.json', function(data) {  
                 ShowData(data, a);  
             }); 
-            // $.ajax({
-            //     url:'../data/db.json',
-            //     data: {select:i+1},
-            //     type:"Get",
-            //     dataType:"json",
-            //     success:ShowData
-            // })
             $("#li_" + a + "").parent().children().each(function (){
                 this.className = '.navigation_ul_none';
             })
@@ -63,109 +60,50 @@ $(function (){
             ShowData(data, 1);  
         }); 
         $.getJSON('../data/db.json', function(data) {  
-            ShowData(data, 5);  
-        }); 
-        $.getJSON('../data/db.json', function(data) {  
-            ShowData(data, 7);  
+            ShowData(data, 6);  
         }); 
         $.getJSON('../data/db.json', function(data) {  
             ShowData(data, 9);  
         }); 
         $.getJSON('../data/db.json', function(data) {  
-            ShowData(data, 11);  
-        }); 
-        $.getJSON('../data/db.json', function(data) {  
             ShowData(data, 13);  
         }); 
-        // $.ajax({url:'../data/../data/db.json', data: {select:1}, type:"GET", dataType:"json", success:ShowData})
-        // $.ajax({url:'../data/../data/db.json', data: {select:5}, type:"GET", dataType:"json", success:ShowData})
-        // $.ajax({url:'../data/../data/db.json', data: {select:7}, type:"GET", dataType:"json", success:ShowData})
-        // $.ajax({url:'../data/../data/db.json', data: {select:9}, type:"GET", dataType:"json", success:ShowData})
-        // $.ajax({url:'../data/../data/db.json', data: {select:11}, type:"GET", dataType:"json", success:ShowData})
-        // $.ajax({url:'../data/../data/db.json', data: {select:13}, type:"GET", dataType:"json", success:ShowData})
-
+        $.getJSON('../data/db.json', function(data) {  
+            ShowData(data, 16);  
+        });  
 
         $(this).bind('click',function (){
             $.getJSON('../data/db.json', function(data) {  
                 ShowData(data, i+1);  
             }); 
-            // $.ajax({
-            //     url:'../data/../data/db.json',
-            //     data: {select:i+1},
-            //     type:"GET",
-            //     dataType:"json",
-            //     success:ShowData
-            // })
         })
     })
     function ShowData(result, id){
-        console.info(result[id]);
-        console.info(id);
-
-        // var length = Object.keys(result).length-1;
         var str ="";
-
         var items = result[id];   
         $.each(items, function(index, item) {  
-            console.info(item.site);
-            console.info(item["site"]);
-            console.info(item.name);
-
-            str += "<div class=\"div_count\"><a href=\"http://" + item.site + "\" target='_blank'><img src=\"https://api.iowen.cn/favicon/" + item.site  + ".png\"><div class=\"div_text\"><span class=\"span1\">" + item.name + "</span><br/><span>" + item.brief + "</span></div></a></div>";
-            if (id>=1 && id<=4) {
+            // str += "<div class=\"div_count\"><a href=\"http://" + item.site + "\" target='_blank'><img src=\"https://api.ekumao.com/api/favicon?url=https://" + item.site  + ".png\"><div class=\"div_text\"><span class=\"span1\">" + item.name + "</span><br/><span>" + item.brief + "</span></div></a></div>";
+            str += "<div class=\"div_count\"><a href=\"http://" + item.site + "\" target='_blank'><img src=\"https://api.ekumao.com/api/favicon?url=https://" + item.site + "\"><div class=\"div_text\"><span class=\"span1\">" + item.name + "</span><br/><span>" + item.brief + "</span></div></a></div>";
+            if (id>=1 && id<=5) {
                 $('#content_1').empty();
                 $('#content_1').append(str);
             }
-            if (id==5 || id==6){
+            if (id>=6 && id<=8){
                 $('#content_2').empty();
                 $('#content_2').append(str);
             }
-            if (id==7 || id==8) {
+            if (id>=9 && id<=12) {
                 $('#content_3').empty();
                 $('#content_3').append(str);
             }
-            if (id==9 || id==10) {
+            if (id>=13 && id<=15) {
                 $('#content_4').empty();
                 $('#content_4').append(str);
             }
-            if (id==11 || id==12){
+            if (id==16 || id==17){
                 $('#content_5').empty();
                 $('#content_5').append(str);
             }
-            if (id>=13 && id<=16){
-                $('#content_6').empty();
-                $('#content_6').append(str);
-            } 
-        });  
-
-        // for (var i=0;i<length;i++){
-        //     // var str = "<div class=\"div_count\"><a href=\"" + result[i].site + "\"><img src=\"../pic/" + result[i].name + ".ico\"><div class=\"div_text\"><span class=\"span1\">" + result[i].name + "</span><br/><span>" + result[i].brief + "</span></div></a></div>";
-        //     str += "<div class=\"div_count\"><a href=\"http://" + result[i].site + "\" target='_blank'><img src=\"https://api.iowen.cn/favicon/" + result[i].site  + ".png\"><div class=\"div_text\"><span class=\"span1\">" + result[i].name + "</span><br/><span>" + result[i].brief + "</span></div></a></div>";
-
-        //     if (id>=1 && id<=4) {
-        //         $('#content_1').empty();
-        //         $('#content_1').append(str);
-        //     }
-        //     if (id==5 || id==6){
-        //         $('#content_2').empty();
-        //         $('#content_2').append(str);
-        //     }
-        //     if (id==7 || id==8) {
-        //         $('#content_3').empty();
-        //         $('#content_3').append(str);
-        //     }
-        //     if (id==9 || id==10) {
-        //         $('#content_4').empty();
-        //         $('#content_4').append(str);
-        //     }
-        //     if (id==11 || id==12){
-        //         $('#content_5').empty();
-        //         $('#content_5').append(str);
-        //     }
-        //     if (id>=13 && id<=16){
-        //         $('#content_6').empty();
-        //         $('#content_6').append(str);
-        //     }
-        // }
+        }); 
     }
 })
