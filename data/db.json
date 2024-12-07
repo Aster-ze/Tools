@@ -7,12 +7,12 @@
         { "site": "www.netflixgc.com",  "name": "奈飞工厂",  "brief": "免费提供Netflix的流媒体播放平台"},
         { "site": "ddys.pro",  "name": "低端影视",  "brief": "超清在线视频站"},
         { "site": "www.novipnoad.net",  "name": "NO视频",  "brief": "海外热门剧集在线观看"}
-
-
     ],
     "2": [  
-        { "site": "www.gying.net",  "name": "观影GYING",  "brief": "看电影，拯救世界！"}
-        { "site": "www.yinfans.me",  "name": "音范丝",  "brief": "一个搜集、精选的高品质电影资源网站"} 
+        { "site": "www.gying.net",  "name": "观影GYING",  "brief": "看电影，拯救世界！"},
+        { "site": "www.yinfans.me",  "name": "音范丝",  "brief": "一个搜集、精选的高品质电影资源网站"},
+        { "site": "pan.melost.cn",  "name": "影盘社",  "brief": "网盘资源搜索神器"},
+        { "site": "pan.funletu.com/#/",  "name": "趣盘搜",  "brief": "搜你所想"}
     ],
     "3": [  
         { "site": "subhd.tv",  "name": "SubHD",  "brief": "分享交流下载字幕平台"},
